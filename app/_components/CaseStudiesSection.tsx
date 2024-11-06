@@ -4,17 +4,40 @@ import Marquee from "react-fast-marquee";
 import FCSingleCard from "@/src/components/FCSingleCard";
 
 export default function CaseStudiesSection() {
-  // const [currentIndex, setCurrentIndex] = useState(0);
-
-  // const nextCaseStudy = () => {
-  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % caseStudies.length);
-  // };
-
-  // const prevCaseStudy = () => {
-  //   setCurrentIndex((prevIndex) =>
-  //     prevIndex === 0 ? caseStudies.length - 1 : prevIndex - 1
-  //   );
-  // };
+  const data = [
+    {
+      title: "10 Million+",
+      info: "Followers Built",
+    },
+    {
+      title: "2 Billion+",
+      info: "Views Driven",
+    },
+    {
+      title: "1 Million+",
+      info: "Users Converted",
+    },
+    {
+      title: "100+",
+      info: "Creators Managed",
+    },
+    {
+      title: "10 Million+",
+      info: "Followers Built",
+    },
+    {
+      title: "2 Billion+",
+      info: "Views Driven",
+    },
+    {
+      title: "1 Million+",
+      info: "Users Converted",
+    },
+    {
+      title: "100+",
+      info: "Creators Managed",
+    },
+  ];
 
   return (
     <div className="py-16 px-8 bg-white">
@@ -26,52 +49,30 @@ export default function CaseStudiesSection() {
             speed={40} // Speed of the marquee (Optional)
             direction="right"
           >
+            {data?.map((el: any) => (
+              <div
+                key={el?.title}
+                className="md:min-w-[350px] min-w-[300px] mx-3 border border-primary py-5 px-5 rounded-lg"
+              >
+                <h2 className="text-3xl font-bold text-primary mb-5">
+                  {el?.title}
+                </h2>
+                <p>{el?.info}</p>
+              </div>
+            ))}
+          </Marquee>
+        </div>
+
+        <div className="mt-10">
+          <Marquee
+            speed={40} // Speed of the marquee (Optional)
+            direction="right"
+          >
             {caseStudies?.map((el: any) => (
               <FCSingleCard el={el} key={el?.id} />
             ))}
           </Marquee>
         </div>
-
-        {/* <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.5 }}
-          className="bg-[white] p-8 rounded border border-primary"
-        >
-          <h3 className="md:text-2xl text-xl font-semibold mb-4 text-primary">
-            {caseStudies[currentIndex].title}
-          </h3>
-          <p className="md:text-lg text-base mb-2">
-            <strong>Problem:</strong> {caseStudies[currentIndex].problem}
-          </p>
-          <p className="md:text-lg text-base mb-2">
-            <strong>Solution:</strong> {caseStudies[currentIndex].solution}
-          </p>
-          <p className="md:text-lg text-base mb-4">
-            <strong>Impact:</strong> {caseStudies[currentIndex].impact}
-          </p>
-          <blockquote className="italic text-black">
-            &quot;{caseStudies[currentIndex].testimonial}&quot;
-          </blockquote>
-        </motion.div> */}
-
-        {/* Navigation Arrows */}
-        {/* <div className="flex justify-center space-x-4 mt-8">
-          <button
-            onClick={prevCaseStudy}
-            className="bg-primary text-white px-4 py-2 rounded hover:bg-white hover:text-primary border border-primary"
-          >
-            Previous
-          </button>
-          <button
-            onClick={nextCaseStudy}
-            className="bg-primary text-white px-4 py-2 rounded hover:bg-white hover:text-primary border border-primary"
-          >
-            Next
-          </button>
-        </div> */}
       </div>
     </div>
   );

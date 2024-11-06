@@ -18,7 +18,7 @@ const inter = Inter({ subsets: ["latin"] });
 // });
 
 export const metadata: Metadata = {
-  title: "Trendify Companies",
+  title: "Welcome to Kalshi",
   description:
     "Trendify is a platform that allows you to invest in the most promising startups and funds.",
 };
