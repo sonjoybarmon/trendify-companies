@@ -1,7 +1,8 @@
 "use client";
 import FCHeader from "@/src/components/FCHeader";
+import Link from "next/link";
 import Marquee from "react-fast-marquee";
-import FCSingleCard from "@/src/components/FCSingleCard";
+// import FCSingleCard from "@/src/components/FCSingleCard";
 
 export default function CaseStudiesSection() {
   const data = [
@@ -63,15 +64,22 @@ export default function CaseStudiesSection() {
           </Marquee>
         </div>
 
-        <div className="mt-10">
-          <Marquee
+        <div className="mt-20">
+          <Link
+            href="https://www.trendify.com"
+            target="_blank"
+            className="border bg-primary py-3 px-8 text-xl text-white rounded-xl"
+          >
+            View Case Studies
+          </Link>
+          {/* <Marquee
             speed={40} // Speed of the marquee (Optional)
             direction="right"
           >
             {caseStudies?.map((el: any) => (
               <FCSingleCard el={el} key={el?.id} />
             ))}
-          </Marquee>
+          </Marquee> */}
         </div>
       </div>
     </div>
